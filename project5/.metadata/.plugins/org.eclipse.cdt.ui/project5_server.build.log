@@ -1,0 +1,52 @@
+15:24:09 **** Incremental Build of configuration Debug for project project5_server ****
+make all 
+Building file: ../src/server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/server.d" -MT"src/server.o" -o "src/server.o" "../src/server.cpp"
+../src/server.cpp: In function ‘void* reader(void*)’:
+../src/server.cpp:73:16: warning: unused variable ‘readerCount’ [-Wunused-variable]
+     static int readerCount = 0;
+                ^~~~~~~~~~~
+../src/server.cpp:109:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/server.cpp: In function ‘int main(int, char**)’:
+../src/server.cpp:277:10: warning: unused variable ‘sockfd’ [-Wunused-variable]
+      int sockfd, newsockfd, portno;
+          ^~~~~~
+../src/server.cpp:277:18: warning: unused variable ‘newsockfd’ [-Wunused-variable]
+      int sockfd, newsockfd, portno;
+                  ^~~~~~~~~
+../src/server.cpp:277:29: warning: unused variable ‘portno’ [-Wunused-variable]
+      int sockfd, newsockfd, portno;
+                             ^~~~~~
+../src/server.cpp:278:16: warning: unused variable ‘clilen’ [-Wunused-variable]
+      socklen_t clilen;
+                ^~~~~~
+../src/server.cpp:280:25: warning: unused variable ‘serv_addr’ [-Wunused-variable]
+      struct sockaddr_in serv_addr, cli_addr;
+                         ^~~~~~~~~
+../src/server.cpp:280:36: warning: unused variable ‘cli_addr’ [-Wunused-variable]
+      struct sockaddr_in serv_addr, cli_addr;
+                                    ^~~~~~~~
+../src/server.cpp:281:10: warning: unused variable ‘n’ [-Wunused-variable]
+      int n;
+          ^
+../src/server.cpp: At global scope:
+../src/server.cpp:73:16: warning: ‘readerCount’ defined but not used [-Wunused-variable]
+     static int readerCount = 0;
+                ^~~~~~~~~~~
+../src/server.cpp: In function ‘int main(int, char**)’:
+../src/server.cpp:351:11: warning: ‘buffer’ is used uninitialized in this function [-Wuninitialized]
+     memcpy(bufHold,buffer,256);
+     ~~~~~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/server.cpp
+ 
+Building target: project5_server
+Invoking: GCC C++ Linker
+g++ -pthread -pthread -o "project5_server"  ./src/client.o ./src/server.o   -lpthread
+Finished building target: project5_server
+ 
+
+15:24:09 Build Finished. 0 errors, 11 warnings. (took 411ms)
+

@@ -1,0 +1,24 @@
+!SESSION 2021-02-27 11:23:39.843 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 4 77 2021-02-27 11:26:17.543
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2021-02-27 11:26:17.543
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2021-02-27 11:26:17.543
+!MESSAGE /home/maxwell/Desktop/operating system/project 2/project2 overlaps the workspace location: /home/maxwell/Desktop/operating system/project 2/project2
+!SESSION 2021-02-27 11:33:56.854 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-02-27 11:36:14.819
+!MESSAGE Indexed 'prototo' (1 sources, 181 headers) in 2.48 sec: 14,313 declarations; 23,434 references; 0 unresolved inclusions; 0 syntax errors; 4 unresolved names (0.011%)
