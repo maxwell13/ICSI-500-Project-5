@@ -1,0 +1,7 @@
+
+
+g++ -o server server.cpp transmitter.cpp Receiver.cpp -pthread
+./server 54554
+
+g++ -o client client.cpp transmitter.cpp Receiver.cpp
+./client 127.0.0.1 54554
