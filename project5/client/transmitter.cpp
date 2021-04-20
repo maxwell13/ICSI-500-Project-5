@@ -101,7 +101,7 @@ public:             // Access specifier
 
 
 //application layer
-transApp::transApp(string filename) {
+transApp::transApp(string ch, string filename) {
 
 
     // read in intext.txt
@@ -118,7 +118,7 @@ transApp::transApp(string filename) {
 
         std::stringstream buffer;
         buffer << infile.rdbuf();
-        inputLine = buffer.str();
+        inputLine = ch + buffer.str();
 
         // cout << "the following  is intext.txt" << '\n';
         // cout << inputLine;

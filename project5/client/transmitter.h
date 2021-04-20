@@ -15,7 +15,7 @@ using namespace std;
 class transApp
 {
 public:
-	transApp(string filename);
+	transApp(string ch, string filename);
 
 };
 

@@ -43,17 +43,15 @@ void clientError(const char *msg)
 int main(int argc, char *argv[])
 {
 
+    string input;
+    string ch;
     string filename;
-    cout << "Please enter file name: ";
-    cin >> filename;
+    cout << "Please enter char and file name: ";
+    cin >> input;
 
-    char clientDecoder[] = "ClientDecoder";
-    char * decoderArgs[] = {clientDecoder, nullptr};
-
-    char clientEncoder[] = "ClientEncoder";
-    char * encoderArgs[] = {clientEncoder, strdup(filename.data()), nullptr};
-
-
+    int position = input.find(",");
+    ch = input.substr(0, position);
+    filename = input.substr(position+1);
 
     int bufferSize = 10240;
     int sockfd, portno, n;
@@ -84,7 +82,6 @@ int main(int argc, char *argv[])
         clientError("ERROR connecting");
 
 
-
     pid_t c_pid = fork();
 
     if (c_pid == -1) {
@@ -95,7 +92,7 @@ int main(int argc, char *argv[])
         cout << "encoder process - started " << getpid() << endl;
 
         // encode file
-        transApp{filename};
+        transApp{ch, filename};
 
         // read encoded content
         std::ifstream binfile("filename.binf");
@@ -129,7 +126,7 @@ int main(int argc, char *argv[])
 
         recApp{str};
 
-        cout << "decoded message saved in filename.out" << endl;
+        cout << "decoded message saved in local file: filename.out" << endl;
         
         // execve(clientDecoder, decoderArgs, nullptr);
         exit(EXIT_SUCCESS);

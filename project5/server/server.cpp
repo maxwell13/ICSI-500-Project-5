@@ -62,7 +62,7 @@ string message;
 string input;
 
 void *reader(void *) {
-    repChar = '$';
+    
     static int readerCount = 0;
 //    std::string intext.txt = "this is a test intext.txt message";
     int num = 0;
@@ -329,7 +329,10 @@ int main(int argc, char *argv[]) {
             buf << recfile.rdbuf();
         }
 
-        input = buf.str();
+        repChar = buf.str().at(0);
+        input = buf.str().substr(1);
+
+
         recfile.close();
 
         // Declaring integers used to
