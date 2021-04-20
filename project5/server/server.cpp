@@ -76,7 +76,7 @@ void *reader(void *) {
         //executes if Q is not full
         if (Q1.size() < MAX) {
 
-//            cout << "read:  " << intext.txt[num] << endl;
+            cout << "read:  " << input[num] << endl;
 
             // Pushing the char into queue
             Q1.push(input[num]);
@@ -88,7 +88,7 @@ void *reader(void *) {
         }
             // else If some other thread is exectuing, wait
         else {
-//            cout << ">> reader is in wait.." << endl;
+            cout << ">> reader is in wait.." << endl;
             pthread_cond_wait(&cond, &mutex);
         }
 
@@ -112,7 +112,7 @@ void *character(void *) {
             // Get the data from the front of queue
             char data = Q1.front();
 
-//            cout << "B thread consumed: " << data << endl;
+            cout << "character consumed: " << data << endl;
 
             // Pop the consumed data from queue
             Q1.pop();
@@ -134,7 +134,7 @@ void *character(void *) {
         }
             // If some other thread is exectuing, wait
         else {
-//            cout << "B is in wait.." << endl;
+            cout << "character is in wait.." << endl;
             pthread_cond_wait(&cond, &mutex);
         }
 
@@ -156,7 +156,7 @@ void *toUpper(void *) {
             // Get the data from the front of queue
             char data = Q2.front();
 
-//            cout << "toUpper thread consumed: " << data << endl;
+            cout << "toUpper thread consumed: " << data << endl;
 
             // Pop the consumed data from queue
             Q2.pop();
@@ -180,7 +180,7 @@ void *toUpper(void *) {
         }
             // If some other thread is exectuing, wait
         else {
-//            cout << "upper is in wait.." << endl;
+            cout << "upper is in wait.." << endl;
             pthread_cond_wait(&cond, &mutex);
 
         }
@@ -205,7 +205,7 @@ void *writer(void *) {
             // Get the data from the front of queue
             char data = Q3.front();
 
-//            cout << "writeter: " << data << endl;
+            cout << "writeter: " << data << endl;
 
             message = message + data;
 
@@ -223,7 +223,7 @@ void *writer(void *) {
         }
             // If some other thread is exectuing, wait
         else {
-//            cout << "writer is in wait.." << endl;
+            cout << "writer is in wait.." << endl;
             pthread_cond_wait(&cond, &mutex);
         }
 
